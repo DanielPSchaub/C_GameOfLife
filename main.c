@@ -15,29 +15,8 @@
 //tests bit, and returns 1 if bit = 1, or 0 if not
 int test_bit(unsigned char value, int bit_number);
 
-//sets a bit in number to 1 - hence 'Alive' //MIGHT BE UNNECCESSARY
-//void set_bit(unsigned char* value, int bit_number);
-
-//sets a bit in number to 0 - hence 'Dead' //MIGHT BE UNNECCESSARY
-//void clear_bit(unsigned char* value, int bit_number);
-
-//determines location from BIN_SIZE bytes to ROWSxCOLS 2-D array
-//TODO?
-
-//doesn't actually change anything, simple call for programmer sake
-//void stillLives();
-
-//doesn't actually change anything, simple call for programmer sake
-//void stillDead();
-
 //determines location from 1D array to 2D array AND then returns char to fill board
 char isAlive(unsigned char test[], int row, int col);
-
-//Counterpart to set_bit
-//char isGrow();
-
-//Counterpart to clear_bit
-//char isKill();
 
 //essentially Constructor for the 2-D array from the 1-D, then prints it
 void populateScreen(unsigned char test[], char screen[][ROWS]);
@@ -83,6 +62,7 @@ int main(int argc, char** argv)
     //printf("\n\n");
 
     //my brililiant plan - this will cut down on needing to physically swap arrays, instead relying on the arguments passed to save effort
+    //BUG: only works properly for even number of generations
     int i, j, k;
     for(i = 0; i< NUM_GENERATIONS/2; i++){
         populateNextScreen(screen, nextScreen);
@@ -96,18 +76,7 @@ int main(int argc, char** argv)
 int test_bit(unsigned char value, int bit_number){
     return (value >> bit_number) & 1;
 }
-/*
-//Not actually used
-void set_bit(unsigned char* value, int bit_number){
-    unsigned char mask = 1 << bit_number;
-    *value = *value | mask;
-}
-//Not actually used
-void clear_bit(unsigned char* value, int bit_number){
-    unsigned char mask = ~(1 << bit_number);
-    *value = *value & mask;
-}
-*/
+
 char isAlive(unsigned char test[], int row, int col){
     int howManyBits = row*COLS + col;
     int cellNum = howManyBits/8;
@@ -125,23 +94,7 @@ char isAlive(unsigned char test[], int row, int col){
     else
         return ' ';
 }
-/*
-void stillLives(){
-    //no change
-}
 
-void stillDead(){
-    //no change
-}
-
-char isGrow(){
-    return 'O';
-}
-
-char isKill(){
-    return ' ';
-}
-*/
 void populateScreen(unsigned char test[], char screen[][ROWS]){
     int i, j;
     for( j = 0; j < ROWS; j++){
@@ -217,16 +170,6 @@ void populateNextScreen(char screen[][ROWS], char nextScreen[][ROWS])
         //DEBUG printf("nextScreen: %c\n", nextScreen[x][y]);
         }
     }
-    /*if cell alive - 
-        2 or 3 neighbors = stillLive
-        else 
-        isKill
-    */
-    /*if cell dead - 
-        3 neightbors = isGrow
-        else
-        stillDead
-    */
 //DEBUG printScreen(nextScreen);
 }
 

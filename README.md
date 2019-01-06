@@ -11,8 +11,13 @@ The currently compilied program is "Conway"
 
 The four binary files are: "blinkers", "glider", "random", and "still" 
 
-Your results will be output into the terminal, else you can pipe it into a file as such: "./Conway random 100 > out.txt"
+If you don't want the results in the terminal you can pipe it into a file as such: "./Conway random 100 > out.txt"
 
 Largely ignore "testInts.txt", that's really only for extensive debugging
 
-Thank you for looking!
+If you want to see it do something, run it a few times incrementing the generations, like this:
+"./Conway blinkers 38"
+"./Conway blinkers 40"
+"./Conway blinkers 42"
+
+Thank you and enjoy!

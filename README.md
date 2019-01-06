@@ -7,11 +7,11 @@ Takes two arguments:
 
 The code is kept in "main.c"
 
-The currently compilied program is "./a.out"
+The currently compilied program is "Conway"
 
 The four binary files are: "blinkers", "glider", "random", and "still" 
 
-Your results will be output into "out.txt"
+Your results will be output into the terminal, else you can pipe it into a file as such: "./Conway random 100 > out.txt"
 
 Largely ignore "testInts.txt", that's really only for extensive debugging
 

@@ -34,6 +34,8 @@ int main(int argc, char** argv)
 {
     if(argc != 3){
         printf("Incorrect number of arguments - Exiting\n");
+        printf("Arguments: name of binary map file, and a number of generations.\n");
+        printf("Example: './Conway blinkers 100' (map is 'blinker', 100 generations)\n");
         return 1;
     }
     

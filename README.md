@@ -1,3 +1,12 @@
+#Update 2023
+WOW this is a blast from the past! This is one of my third-year CS undergrad assignments. 
+
+There's no reason to keep it here except nostalgia since I've learned an unfathomable amount more since then. 
+
+But, for nostalgia sake, I'll keep it.
+
+P.S. I also didn't like this assignment. Two-dimensional arrays in C? Icky.
+
 # C_GameOfLife
 Conway’s Game of Life, written in C, using binary file inputs for starting map. 
 
